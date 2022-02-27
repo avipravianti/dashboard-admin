@@ -8,6 +8,7 @@ const ContentTable = () => {
 
 
     const dispatch = useDispatch();
+
     const {data} = useSelector(state => state.dataReducer)
     console.log(data)
     
@@ -74,7 +75,7 @@ const ContentTable = () => {
                 <tbody>
                 {data?.map((item, index) => {
                 return (
-                    <tr className="text-center hover:bg-lightBlue">
+                    <tr key={index} className="text-center hover:bg-lightBlue">
                     <td className="py-1">{item?.show?.id}</td>    
                     <td>{item?.show?.name}</td>
                     <td>{item?.show?.language}</td>
